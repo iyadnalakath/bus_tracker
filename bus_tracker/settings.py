@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-w(w_mxeuykxt9y$gqk9x2-u2vml^w)xtui7vlt-z-yr=h!0a)m
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 
 # Application definition
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+    'corsheaders', 
     'djoser',
     
 
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -158,9 +162,9 @@ STATIC_URL = 'static/'
 #     '/var/www/static/',
 # ]
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# VENV_PATH = os.path.dirname(BASE_DIR)
-# STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 # STATIC_ROOT = "/var/www/example.com/static/"
 
 # Default primary key field type
