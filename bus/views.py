@@ -26,7 +26,7 @@ class BusTimeViewSet(ModelViewSet):
     serializer_class=BusTimeSerializer
 
     def get_permissions(self):
-        if self.request == 'retrieve':
+        if self.request == 'list':
             permission_classes= [AllowAny]
         else:
             permission_classes = [IsAuthenticated]
