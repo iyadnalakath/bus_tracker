@@ -162,7 +162,7 @@ STATIC_URL = 'static/'
 #     '/var/www/static/',
 # ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 # STATIC_ROOT = "/var/www/example.com/static/"
